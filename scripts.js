@@ -1,4 +1,4 @@
-let canvasSize = 10;
+let canvasSize = 16;
 let canvas = document.querySelector("#canvas")
 
 function generateCanvas(canvasSize) {
@@ -12,9 +12,16 @@ function generateCanvas(canvasSize) {
     }
 }
 
-canvas.addEventListener('click', (event) => {
+canvas.addEventListener('mouseover', (event) => {
     const pixel = document.getElementById(event.target.id);
     pixel.style.backgroundColor = 'black';
 })
 
-generateCanvas(canvasSize);
+let clear = document.querySelector("#clear");
+
+clear.addEventListener('click', (event) => {
+    canvas.innerHTML = '';
+    generateCanvas(canvasSize);
+})
+
+// generateCanvas(canvasSize);
